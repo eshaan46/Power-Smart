@@ -123,6 +123,7 @@ With the increasing demand for energy and the rising costs associated with it, t
 4. **Customizable Settings**
 5. **Energy Savings**
 6. **Environmental Impact**
+7. **currently can handle up two 20 different brands and models**
 
 ---
 
