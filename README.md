@@ -154,7 +154,7 @@ With the increasing demand for energy and the rising costs associated with it, t
 
 ## Statistics and Impact
 
-- Save up to **20%** on electricity bills.
+- Save up to **15%** on electricity bills.
 - Reduce carbon footprint.
 - Increase awareness of energy usage.
 
@@ -167,6 +167,8 @@ With the increasing demand for energy and the rising costs associated with it, t
 - Improved Machine Learning Models.
 - Voice Control and Automation.
 - Scalability for Industrial Use.
+- APP development
+- API development fro the model
 
 ---
 
