@@ -176,3 +176,5 @@ With the increasing demand for energy and the rising costs associated with it, t
 
 - **Email:** erobotics46@outlook.com
 - **GitHub:** [yourusername](https://github.com/@eshaan46)
+- if you want to run the following programs you will need to install `Arduino IDE` and download the following libraries
+-  `sci-kit learn , pandas , numpy , matplotlib , seaborn , joblib` 
