@@ -40,4 +40,7 @@
 
 ### **Video Link**
 - This video will demonstrate the AI model and show the code of the microcontroller.
-- [Video](link)
+- [Video]()
+### **How To Run**
+- to run you will ned to install the following libraries
+- `scikit-learn pandas seaborn matplotlib numpy`
