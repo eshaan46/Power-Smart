@@ -1,180 +1,43 @@
-# Power Smart Project
+## Power Smart
 
-**An AI-driven solution to optimize electrical efficiency in residential and commercial buildings.**
-
----
-
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Problem Statement](#problem-statement)
-- [Solution Overview](#solution-overview)
-- [Hardware Components](#hardware-components)
-- [Software Components](#software-components)
-- [System Architecture](#system-architecture)
-- [Machine Learning Model](#machine-learning-model)
-- [Features and Benefits](#features-and-benefits)
-- [Installation and Setup](#installation-and-setup)
-- [Usage Instructions](#usage-instructions)
-- [Statistics and Impact](#statistics-and-impact)
-- [Future Enhancements](#future-enhancements)
-- [Contributing](#contributing)
-- [License](#license)
+### **Issue At Large**
+- **30%** of global electricity is used by appliances [clasp.com](https://www.clasp.ngo/report/net-zero-heroes/appliances-impacts-and-benefits/?utm_source=chatgpt.com).
+- Out of this, **10-15%** is wasted due to inefficient appliance operation in our homes.
+- That is approximately 2000 TWh.
+- This could power many homes.
+- The main disadvantage is the amount of CO2 and other pollutants added to the environment, as over 70% of electricity is still produced from fossil fuels.
 
 ---
 
-## Introduction
-
-**Power Smart** is an innovative project that leverages artificial intelligence to assess and optimize the electrical efficiency of buildings. By integrating hardware components with AI models, the system provides real-time insights into power consumption, helping users make informed decisions to reduce energy waste and improve efficiency.
-
----
-
-## Problem Statement
-
-With the increasing demand for energy and the rising costs associated with it, there is a critical need to optimize electrical consumption in buildings. Traditional methods of assessing electrical efficiency are often reactive, costly, and time-consuming. There is a lack of accessible solutions that provide real-time data and actionable insights to everyday users.
-
-**Key Challenges:**
-
-- Inefficient energy usage leading to higher utility bills.
-- Difficulty in identifying power-hungry appliances.
-- Lack of real-time monitoring and predictive analytics.
-- Environmental impact due to excessive energy consumption.
+### **Issue We are Targeting**
+- Over time, appliances tend to become inefficient, whether they are light bulbs or fans.
+- For example, a light bulb produces 30% light and 70% heat for a certain amount of electricity. Over time, this ratio worsens, wasting a lot of electricity in the long run.
+- This happens often, so helping people measure their components' efficiency or `Power Factor` would give them an idea of their environmental impact and potential cost savings. Individually, it may seem small, but collectively, it adds up.
 
 ---
 
-## Solution Overview
+### **Proposed Solution**
+- The solution I propose consists of three important parts:
 
-**Power Smart** addresses these challenges by providing a comprehensive system that:
+#### Hardware:
+- The hardware is designed to be easily installed into your breaker board. Through the breaker board, it connects to each appliance, mainly lights, fans, and ACs, which are the current priorities.
+- Microcontroller (ESP-32) > I2C interface > Full bridge Rectifier (Turn AC - DC) > Triac (An Electrical switch for AC) > Breaker board (appliances), I2C interface > I912n Sensor (Measures Current, Voltage, etc.)
+- The microcontroller obtains data from the sensor, and using the triacs, it can control the data being driven to the sensor. This data is then sent to our app.
 
-- Monitors electrical parameters in real-time using sensors connected via an ESP32 microcontroller.
-- Controls appliances through triacs interfaced with an I2C expansion board.
-- Utilizes an AI model to analyze data and predict efficiency levels.
-- Offers a user-friendly interface through an MIT App Inventor application for control and monitoring.
+#### App:
+- Our app is still in development. It is being built with MIT App Maker Software. The app will sync the controller with our API.
 
----
+#### Machine Learning Model:
+- Our machine learning model aims to achieve an MSE loss below **0.2**. Our model has achieved **0.0006**, indicating an accuracy range of **95-99%**.
+- The model's testing performance is also remarkable, with an MSE loss of **0.0007** on unseen data.
+- The model is trained on brands, model types, and appliance types. It can handle up to 20 brands, each with 20 models of 20 appliances, making a total of **8000** appliances in its initial stage.
 
-## Hardware Components
+### **Future Additions**
+- We plan to add the following features:
+  - An accompanying chatbot to understand the data, describe it to you, and suggest necessary measures.
+  - Expand the number of appliances our model can handle.
+  - Add a live training system to make the model more personalized.
 
-1. **ESP32 Microcontroller**
-2. **I2C Expansion Board**
-3. **Triacs (20 Units)**
-4. **Sensors**
-   - Voltage Sensors
-   - Current Sensors
-   - Temperature Sensors
-5. **Full Bridge Rectifier**
-6. **Appliances**
-
----
-
-## Software Components
-
-1. **ESP32 Firmware (Arduino C++)**
-2. **AI Model (Python)**
-3. **Mobile Application (MIT App Inventor)**
-4. **Backend Server (Optional)**
-
----
-
-## System Architecture
-
-![System Architecture Diagram](images/system_architecture.png)
-
-1. **User Interaction**
-2. **ESP32 Microcontroller**
-3. **I2C Communication**
-4. **Sensor Data Processing**
-5. **AI Model Analysis**
-6. **User Feedback**
-
----
-
-## Machine Learning Model
-
-### **Dataset Preparation**
-
-- **Data Collection**
-  - 100 appliance models across categories: Light Bulbs, ACs, Fans, Heaters.
-  - 10,000 samples generated.
-- **Features**
-  - Appliance Type, Model, Brand, Power (W), Voltage (V), Current (A), Operational Hours, Power Factor.
-- **Target Variable**
-  - Efficiency Score (Scale of 1 to 5)
-
-### **Model Selection**
-
-- **Random Forest Regressor**
-- **Linear Regression**
-
-### **Training and Evaluation**
-
-- **Data Preprocessing**
-  - Encoding and normalization.
-- **Model Performance**
-  - Random Forest outperformed Linear Regression.
-
----
-
-## Features and Benefits
-
-1. **Real-time Monitoring**
-2. **Remote Control**
-3. **AI-Powered Insights**
-4. **Customizable Settings**
-5. **Energy Savings**
-6. **Environmental Impact**
-7. **currently can handle up two 20 different brands and models**
-
----
-
-## Installation and Setup
-
-### **Hardware Setup**
-
-1. Assemble the components.
-2. Ensure safety during connections.
-
-### **Software Setup**
-
-1. ESP32 Firmware: Install libraries and upload code.
-2. AI Model: Train or deploy the provided model.
-3. Mobile App: Customize and install.
-
----
-
-## Usage Instructions
-
-1. **Connecting to Wi-Fi**
-2. **Controlling Appliances**
-3. **Receiving Data**
-4. **Interpreting Results**
-5. **Calibration**
-
----
-
-## Statistics and Impact
-
-- Save up to **15%** on electricity bills.
-- Reduce carbon footprint.
-- Increase awareness of energy usage.
-
----
-
-## Future Enhancements
-
-- Integration with Renewable Energy.
-- Advanced Analytics Dashboard.
-- Improved Machine Learning Models.
-- Voice Control and Automation.
-- Scalability for Industrial Use.
-- APP development
-- API development fro the model
-
----
-
-**Contact Information:**
-
-- **Email:** erobotics46@outlook.com
-- **GitHub:** [yourusername](https://github.com/@eshaan46)
-- if you want to run the following programs you will need to install `Arduino IDE` and download the following libraries
--  `sci-kit learn , pandas , numpy , matplotlib , seaborn , joblib` 
+### **Video Link**
+- This video will demonstrate the AI model and show the code of the microcontroller.
+- [Video](link)
