@@ -39,8 +39,8 @@
   - Add a live training system to make the model more personalized.
 
 ### **Video Link**
-- This video will demonstrate the AI model and show the code of the microcontroller.
-- [Video]()
+- This video will demonstrate the AI model and show the code of the microcontroller.To use the video click the link it will take you to a onedrive from theri download the video then veiw it 
+- [Video](https://1drv.ms/f/c/4cc84ad0d2ae93f6/EmPPNGratWFNsB3YHjgeLTUBNosyNAMDOZ8PVHEZ9_4ASQ?e=dZzzdC)
 ### **How To Run**
 - to run you will ned to install the following libraries
 - `scikit-learn pandas seaborn matplotlib numpy`
